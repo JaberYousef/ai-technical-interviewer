@@ -1,0 +1,22 @@
+{
+  "name": "@ai-interview-coach/extension",
+  "version": "1.0.0",
+  "description": "AI Interview Coach Chrome Extension - LeetCode DOM extraction",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": ["chrome-extension", "leetcode", "ai", "interview", "coach"],
+  "author": "Yousef Jaber",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@crxjs/vite-plugin": "^2.0.0",
+    "typescript": "^5.0.0",
+    "@types/chrome": "^0.0.0"
+  }
+}

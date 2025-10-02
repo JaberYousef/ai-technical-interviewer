@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "AI Interview Coach",
+  "version": "1.0.0",
+  "description": "Extract LeetCode problem data for AI interview practice",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "src/background/index.ts"
+  },
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_title": "AI Interview Coach"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
