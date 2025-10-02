@@ -4,4 +4,5 @@
 
 export * from './prd.js';
 export * from './techstack.js';
+export * from './prompt.js';
 

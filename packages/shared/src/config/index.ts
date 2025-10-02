@@ -3,12 +3,19 @@
  * Exports the main bootstrap function and utilities
  */
 
-export { bootstrapConfig, loadPRD, loadTechStack } from './loader.js';
-export { validateConfigs, validatePRD, validateTechStack } from './validator.js';
-export { getFeatures, getRoadmap, getTechStack, getPhases, getEnvConfig, getFrontendConfig, getBackendConfig, getExtensionConfig } from './loader.js';
+import { loadPRD, loadTechStack } from './loader';
+import { validateConfigs } from './validator';
 
-export type { PRD } from '../types/prd.js';
-export type { TechStack } from '../types/techstack.js';
+export { bootstrapConfig, loadPRD, loadTechStack } from './loader';
+export { validateConfigs, validatePRD, validateTechStack } from './validator';
+export { getFeatures, getRoadmap, getTechStack, getPhases, getEnvConfig, getFrontendConfig, getBackendConfig, getExtensionConfig } from './loader';
+
+// Re-export prompt and AI modules
+export * from '../prompt/index';
+export * from '../ai/index';
+
+export type { PRD } from '../types/prd';
+export type { TechStack } from '../types/techstack';
 
 /**
  * Main bootstrap function with validation
@@ -18,7 +25,8 @@ export const bootstrap = () => {
   console.log('🚀 Starting AI Interview Coach bootstrap...');
   
   try {
-    const { prd, techstack } = bootstrapConfig();
+    const prd = loadPRD();
+    const techstack = loadTechStack();
     
     // Validate configurations
     const validated = validateConfigs(prd, techstack);

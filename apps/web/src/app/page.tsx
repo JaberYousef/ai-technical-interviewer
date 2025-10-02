@@ -2,6 +2,7 @@
 
 import { useSessionStore } from '@/stores/session';
 import { useState, useEffect } from 'react';
+import AIInterviewer from '@/components/AIInterviewer';
 
 export default function HomePage() {
   const { 
@@ -80,6 +81,9 @@ export default function HomePage() {
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* AI Interviewer */}
+          <AIInterviewer />
+          
           {/* Session Control Panel */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
@@ -191,6 +195,12 @@ export default function HomePage() {
 
         {/* Quick Actions */}
         <div className="mt-8 flex justify-center space-x-4">
+          <a
+            href="/interview"
+            className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
+          >
+            Start Interview (Phase 1)
+          </a>
           <a
             href="/settings"
             className="bg-gray-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
